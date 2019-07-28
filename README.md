@@ -13,22 +13,16 @@
  
  ## Adding or removing stuff
   If you want to use this program nut don't like some of the modules you can simply delete a subdir with that module.
-  If you want to add a new one- remember that instructions must be in **$new_subdir/**_playbook.yml_** , or else *run_me.sh* won't detect and run it.
+  If you want to add a new one- remember that instructions must be in **$new_subdir/playbook.yml** , or else *run_me.sh* won't detect and run it.
   
   
   
 ## Modules
  Both existing and planned 
- ---
- emacs26
- ---
- guake-terminal
- ---
- bashrc config
- ---
- firefox nightly
- ---
- yubioath
- ---
- git + global config
+ >  emacs26
+ >  guake-terminal
+ >  bashrc config
+ >  firefox nightly
+ >  yubioath
+ >  git + global config
  
