@@ -20,9 +20,19 @@
 ## Modules
  Both existing and planned 
  >  emacs26
+ 
+ 
  >  guake-terminal
+ 
+ 
  >  bashrc config
+ 
+ 
  >  firefox nightly
+ 
+ 
  >  yubioath
+ 
+ 
  >  git + global config
  
