@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  name: Guake terminal & minor bashrc changes
+  become: yes
+
+  tasks:
+
+    - name: Adding PPA
+      apt-repository:
+        repo: 'ppa:linuxuprising/guake'
+
+
+    - name: Change bashrc
+      shell: cat /home/neko/Downloads/initial-ansible-playbooks/modules/guake-terminal/bashrc.txt > /home/neko/.bashrc
