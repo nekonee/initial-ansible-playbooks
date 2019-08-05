@@ -12,7 +12,7 @@
 
     - name: "Paste"
       prompt: "Where do you want to paste the emacs config?"
-      default: "/home/neko/test-emacs.d/"
+      default: "/home/neko/.emacs.d/"
       private: no
 
 
@@ -20,7 +20,7 @@
 
     - name: Adding PPA
       apt_repository:
-        repo: 'ppa:kelleyk/emacs'
+        repo: ppa:kelleyk/emacs
 
 
     - name: Install emacs
