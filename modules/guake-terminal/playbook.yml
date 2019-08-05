@@ -3,10 +3,11 @@
   name: Guake terminal & minor bashrc changes
   become: yes
 
+
   tasks:
 
     - name: Adding PPA
-      apt-repository:
+      apt_repository:
         repo: 'ppa:linuxuprising/guake'
 
 
