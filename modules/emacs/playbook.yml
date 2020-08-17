@@ -6,7 +6,7 @@
   vars_prompt:
     - name: "Copy"
       prompt: "Where do you want to copy emacs config from?"
-      default: "/home/neko/Downloads/initial-ansible-playbooks/modules/emacs/dotfiles/"
+      default: "/home/neko/Downloads/initial-ansible-playbooks-master/modules/emacs/dotfiles/"
       private: no
 
 

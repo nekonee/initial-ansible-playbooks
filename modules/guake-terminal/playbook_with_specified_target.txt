@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  name: Guake terminal & minor bashrc changes
+  become: yes
+
+
+  tasks:
+
+    - name: Apt guake
+      apt:
+        update_cache: yes
+        name: 'guake'
+
+
+    - name: Change bashrc
+      shell: cat /home/neko/Downloads/initial-ansible-playbooks-master/modules/guake-terminal/bashrc.txt > /home/neko/.bashrc

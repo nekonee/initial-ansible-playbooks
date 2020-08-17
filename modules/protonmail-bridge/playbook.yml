@@ -1,0 +1,46 @@
+---
+- hosts: localhost
+  name: Protonmail bridge for Thunderbird
+  become: yes
+
+  vars_prompt:
+    - name: "pm_dest"
+      prompt: "Dest of bridge .deb file"
+      default: "/home/neko/Downloads/initial-ansible-playbooks-master/modules/protonmail-bridge/"
+      private: no
+
+    - name: "pubkey"
+      prompt: "Dest for bridge's pubkey"
+      default: "/home/neko/Downloads/initial-ansible-playbooks-master/modules/protonmail-bridge/"
+      private: no
+
+    - name: "policies"
+      prompt: "Dest for policy file"
+      default: "/home/neko/Downloads/initial-ansible-playbooks-master/modules/protonmail-bridge/"
+      private: no
+
+
+tasks:
+
+
+  - name: Download file
+    get_url:
+      url: https://protonmail.com/download/protonmail-bridge_1.2.7-1_amd64.deb
+      dest: {{ pm_dest }}
+
+  - name: Download public key
+    get_url:
+      url: https://protonmail.com/download/bridge_pubkey.gpg
+      dest: {{ pubkey }}
+
+
+   - name: Policy file download
+     get_url:
+       url: https://protonmail.com/download/bridge.pol
+       dest: {{ policies }}
+
+  - name : Import pubkey to keyring
+    shell: |
+      gpg --dearmor --output debsig.gpg bridge_pubkey.gpg &&
+      sudo mkdir -p /usr/share/debsig/keyrings/E2C75D68E6234B07
+      sudo mv debsig.gpg /usr/share/debsig/keyrings/E2C75D68E6234B07
